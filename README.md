@@ -33,5 +33,5 @@ By default, a demo API key is included. For higher limits or production use:
 Clone the repo:
 
 ```bash
-git clone https
+git clone https://github.com/Maryam-nokohan/GoldCurrentPrice.git
 go run goldPri.go
