@@ -24,5 +24,17 @@ This is how you can get gmail App password for this program. This methode is sec
 5. Click **Generate**.
 6. Copy the 16-character password Google shows you (it will look like `abcd efgh ijkl mnop`).
 
+## 3. Add info to .env
+```
+# Your Gmail address (the sender)
+EMAIL_ADDRESS=your-email@gmail.com
+
+# Your Gmail App Password (16 characters)
+# How to get this is explained in the README.
+EMAIL_KEY="xxxx xxxx xxxx xxxx"
+
+# The recipient's email address
+EMAIL_RECEIVER=recipient@example.com
+```
 
 
