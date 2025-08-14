@@ -4,6 +4,10 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+
+	"github.com/Maryam-nokohan/GoldCurrentPrice/config"
+	"github.com/Maryam-nokohan/GoldCurrentPrice/massager"
+	"github.com/Maryam-nokohan/GoldCurrentPrice/model"
 )
 
 const apiKey = "goldapi-10mc7psmd7stwiu-io"
@@ -51,4 +55,12 @@ func main() {
 	}
 
 	fmt.Printf("Current gold price in USD: $%.2f\n", price)
+
+	// Mail sender logic
+	sender := massager.NewMail(config.GetFromEnv("EMAIL_ADDRESS"), config.GetFromEnv("EMAIL_KEY"))
+	sender.Send(config.GetFromEnv("EMAIL_RECEIVER") , &model.Message{
+		Header: "Gold current price",
+		Body: fmt.Sprintf("hello\nthe current price of gold in USD is %.2f\n" , price),
+	})
+
 }

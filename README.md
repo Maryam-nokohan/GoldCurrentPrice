@@ -27,11 +27,15 @@ By default, a demo API key is included. For higher limits or production use:
 ```go
     const apiKey = your_key_here
 ```
-
+### Email Sender
+see [this](./massager/ReadMe.md) for more information
 ## 🔧 Installation
 
 Clone the repo:
 
 ```bash
 git clone https://github.com/Maryam-nokohan/GoldCurrentPrice.git
-go run goldPri.go
+cd GoldCurrentPrice
+go mod tidy
+go run .
+```
